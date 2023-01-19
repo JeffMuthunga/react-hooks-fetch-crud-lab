@@ -9,7 +9,7 @@
         "key",
         "prop"
       ],
-      "correctIndex": 2
+      "correctIndex": 3
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
         "props",
         "state"
       ],
-      "correctIndex": 1
+      "correctIndex": 2
     },
     {
       "id": 3,
@@ -45,48 +45,15 @@
       "correctIndex": 1
     },
     {
-      "id": 5,
-      "prompt": "What syntax makes it possible to unpack values from arrays, or properties from objects, into distinct variables?",
+      "prompt": "Is Jeff the best?",
       "answers": [
-        "spread",
-        "key-value",
-        "coalescing",
-        "destructuring"
-      ],
-      "correctIndex": 3
-    },
-    {
-      "id": 6,
-      "prompt": "Returning different elements from a component depending on the state of your application is known as _____ rendering.",
-      "answers": [
-        "voodoo",
-        "conditional",
-        "reactive",
-        "controlled"
-      ],
-      "correctIndex": 1
-    },
-    {
-      "prompt": "Is Jeff Handsome?",
-      "answers": [
-        "Yes",
+        "is a",
         "very ",
-        "handsome",
-        "guy"
+        "He is a True King",
+        "Ofcourse"
       ],
-      "correctIndex": "1",
-      "id": 7
-    },
-    {
-      "prompt": "jeff",
-      "answers": [
-        "asfafa",
-        "sdgags",
-        "handsome",
-        "guy"
-      ],
-      "correctIndex": "2",
-      "id": 8
+      "correctIndex": 2,
+      "id": 5
     }
   ]
 }

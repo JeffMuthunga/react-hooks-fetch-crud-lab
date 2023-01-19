@@ -17,8 +17,8 @@ function QuestionForm(props) {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
     fetch("http://localhost:4000/questions", {
     method: "POST",
@@ -27,21 +27,21 @@ function QuestionForm(props) {
       "Accept": "application/json"
     },
     body: JSON.stringify({
-      prompt: formData.prompt,
+      prompt: e.target.prompt.value,
       answers: [
-        formData.answer1,
-        formData.answer2,
-        formData.answer3,
-        formData.answer4
+        e.target.answer1.value,
+        e.target.answer2.value,
+        e.target.answer3.value,
+        e.target.answer4.value
       ],
-      correctIndex: formData.correctIndex
+      correctIndex: parseInt(e.target.correctIndex.value, 10)
     }),
   })
     .then((r) => r.json())
     .then((data) => setFormData(data));
 
     setFormData({
-      prompt: " ",
+      prompt: "",
       answer1: "",
       answer2: "",
       answer3: "",

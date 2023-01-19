@@ -5,6 +5,7 @@ function QuestionList() {
   const [questionData, setQuestionData] = useState([])
 
 
+
   useEffect(()=>{
     fetch("http://localhost:4000/questions")
     .then((r)=> r.json())
@@ -14,15 +15,34 @@ function QuestionList() {
 
   const questionList =  questionData.map((questionObj)=> {
     return (
-      <QuestionItem key={questionObj.id} question={questionObj} onDeleteQuestion={handleDeleteQuestion}/>
+      <QuestionItem onUpdateQuestion={handleUpdate} key={questionObj.id} question={questionObj} onDeleteQuestion={handleDeleteQuestion}/>
     )
   })
+  function handleUpdate(updatedAnswer){
+    const updatedQuestions = questionData.map((question)=>{
+      if(question.correctIndex === updatedAnswer.correctIndex){
+        return question
+      }else {
+        return updatedAnswer
+      }
 
+    })
+    setQuestionData(updatedQuestions)
+  }
+// function handleUpdate(newAnswer, id){
+//   setQuestionData(questionData.map((question)=>{
+//     if(question.id === id){
+//       return newAnswer
+//     }else{
+//       return question 
+//     }
+//   }))
+// }
   function handleDeleteQuestion(question){
     const afterDeleteData = questionData.filter((obj)=> obj.id !== question.id)
     setQuestionData(afterDeleteData)
   }
-    // data.filter((obj)=> data.question.id !== id)
+
    
  
 
